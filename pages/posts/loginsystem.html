@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Secure Python Login System with MySQL</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            color:#333;
+            line-height:1.8;
+        }
+
+        .container{
+            width:90%;
+            max-width:900px;
+            margin:40px auto;
+            background:#fff;
+            padding:40px;
+            border-radius:10px;
+            box-shadow:0 5px 20px rgba(0,0,0,.08);
+        }
+
+        h1{
+            font-size:2.3rem;
+            color:#222;
+            margin-bottom:20px;
+        }
+
+        h2{
+            color:#1f4e79;
+            margin-top:40px;
+            margin-bottom:15px;
+        }
+
+        p{
+            margin-bottom:18px;
+        }
+
+        ul,ol{
+            margin-left:25px;
+            margin-bottom:20px;
+        }
+
+        li{
+            margin-bottom:8px;
+        }
+
+        code{
+            background:#ececec;
+            padding:2px 6px;
+            border-radius:4px;
+        }
+
+        pre{
+            background:#1e1e1e;
+            color:#fff;
+            padding:18px;
+            border-radius:8px;
+            overflow:auto;
+            margin:20px 0;
+        }
+
+        .info{
+            background:#eef7ff;
+            border-left:5px solid #1f4e79;
+            padding:15px;
+            margin:25px 0;
+        }
+
+        footer{
+            margin-top:50px;
+            text-align:center;
+            color:#777;
+            font-size:.9rem;
+        }
+
+        @media(max-width:768px){
+
+            .container{
+                padding:25px;
+            }
+
+            h1{
+                font-size:1.8rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🔐 Building a Secure Python Login System with MySQL and SHA-256 Authentication</h1>
+
+<p>
+Authentication is one of the first real-world features every Python developer should learn.
+Whether you're building a desktop application, management software, or preparing for web development,
+understanding how login systems work is an essential skill.
+</p>
+
+<p>
+In this project, we build a modular Python Login & Signup System using MySQL as the backend database.
+The application securely stores user passwords using SHA-256 hashing while demonstrating modular programming,
+database connectivity, input validation, and exception handling.
+</p>
+
+<div class="info">
+<strong>Project Highlights</strong>
+
+<ul>
+    <li>User Signup</li>
+    <li>User Login</li>
+    <li>SHA-256 Password Hashing</li>
+    <li>MySQL Integration</li>
+    <li>Input Validation</li>
+    <li>Custom Exception Handling</li>
+    <li>Modular Code Structure</li>
+</ul>
+
+</div>
+
+<h2>Why Build a Login System?</h2>
+
+<p>
+Every modern application requires authentication. Building one yourself teaches the fundamentals
+behind secure user verification and database management.
+</p>
+
+<ul>
+    <li>User Authentication</li>
+    <li>Password Security</li>
+    <li>Database Design</li>
+    <li>Python Modules</li>
+    <li>Error Handling</li>
+</ul>
+
+<h2>Project Structure</h2>
+
+<pre>
+Login_System/
+│
+├── Login_System.py
+├── database.py
+├── README.md
+│
+├── modules/
+│   ├── login_signup.py
+│   ├── exception_handling.py
+</pre>
+
+<h2>Technologies Used</h2>
+
+<ul>
+    <li>Python 3.11+</li>
+    <li>MySQL Server</li>
+    <li>mysql-connector-python</li>
+    <li>hashlib</li>
+    <li>Modular Programming</li>
+</ul>
+
+<h2>Signup Workflow</h2>
+
+<ol>
+    <li>Enter user details</li>
+    <li>Validate inputs</li>
+    <li>Check duplicate username</li>
+    <li>Confirm password</li>
+    <li>Generate SHA-256 hash</li>
+    <li>Store user data in MySQL</li>
+</ol>
+
+<h2>Login Workflow</h2>
+
+<ol>
+    <li>Enter username</li>
+    <li>Enter password</li>
+    <li>Hash the entered password</li>
+    <li>Compare hash with stored database hash</li>
+    <li>Login successful if hashes match</li>
+</ol>
+
+<h2>Password Security</h2>
+
+<p>
+Passwords are never stored in plain text. Instead, they are converted into a SHA-256 hash before
+being stored inside the database.
+</p>
+
+<pre>
+User Password
+      │
+      ▼
+SHA-256 Hash
+      │
+      ▼
+Stored in Database
+</pre>
+
+<p>Example:</p>
+
+<pre>
+Password:
+Hello123
+
+Stored Hash:
+0d4d8d9f9bb4e...
+</pre>
+
+<h2>Project Modules</h2>
+
+<h3>Login_System.py</h3>
+
+<p>Main application entry point and menu handling.</p>
+
+<h3>database.py</h3>
+
+<ul>
+    <li>Database Connection</li>
+    <li>Cursor Creation</li>
+    <li>Commit & Rollback</li>
+</ul>
+
+<h3>login_signup.py</h3>
+
+<ul>
+    <li>User Signup</li>
+    <li>User Login</li>
+    <li>Password Hashing</li>
+    <li>User Authentication</li>
+</ul>
+
+<h3>exception_handling.py</h3>
+
+<p>Contains custom exception classes for better error management.</p>
+
+<pre>
+class SignupError(Exception):
+    pass
+</pre>
+
+<h2>Common Errors</h2>
+
+<ul>
+    <li>ModuleNotFoundError</li>
+    <li>Duplicate Username</li>
+    <li>Password Mismatch</li>
+    <li>Database Connection Errors</li>
+</ul>
+
+<h2>Future Improvements</h2>
+
+<ul>
+    <li>Forgot Password</li>
+    <li>Email Verification</li>
+    <li>OTP Authentication</li>
+    <li>bcrypt / Argon2 Hashing</li>
+    <li>Password Strength Checker</li>
+    <li>JWT Authentication</li>
+    <li>Admin Dashboard</li>
+    <li>User Dashboard</li>
+    <li>REST API (Flask/FastAPI)</li>
+    <li>Docker Support</li>
+    <li>GUI Version</li>
+</ul>
+
+<h2>Learning Outcomes</h2>
+
+<ul>
+    <li>Python Functions</li>
+    <li>Packages & Modules</li>
+    <li>MySQL CRUD Operations</li>
+    <li>Password Hashing</li>
+    <li>SQL Queries</li>
+    <li>Input Validation</li>
+    <li>Exception Handling</li>
+    <li>Authentication Systems</li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>
+Building a login system from scratch is one of the best ways to understand how secure authentication
+works. This project combines Python, MySQL, password hashing, modular programming, and error handling
+into a practical application that serves as a solid foundation for larger backend and cybersecurity
+projects.
+</p>
+
+<footer>
+    © 2026 | Python Login System Blog | Built with ❤️ using HTML
+</footer>
+
+</div>
+
+</body>
+</html>
