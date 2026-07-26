@@ -1,0 +1,159 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:rgb(23, 23, 23);
+    color:#ffffff;
+    line-height:1.6;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+header{
+    background:rgb(23, 23, 23);
+    border-bottom:1px solid #ddd;
+}
+
+header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#ffffff;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:rgb(132, 132, 132);
+}
+
+.hero{
+    text-align:center;
+    padding:70px 0;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:8px;
+}
+
+.hero p{
+    color:#666;
+    max-width:600px;
+    margin:auto;
+}
+
+.posts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-bottom:50px;
+}
+
+.card{
+    background:rgb(35 , 35, 35);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    display:block;
+}
+
+.content{
+    padding:20px;
+}
+
+.content span{
+    color:gray;
+    font-size:14px;
+}
+
+.content h3{
+    margin:12px 0;
+}
+
+.content p{
+    color:#666;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+    border-radius:6px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#333;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:rgb(23, 23, 23);
+    color:#666;
+}
+
+@media(max-width:700px){
+
+header .container{
+    flex-direction:column;
+}
+
+nav{
+    margin-top:15px;
+}
+
+.hero h2{
+    font-size:30px;
+}
+#profile
+{
+    height: 90px;
+    border-radius: 100%;
+}
+}
+
+#profile
+{
+    height: 130px;
+    border-radius: 100%;
+}
+#mode
+{
+    display:flex;
+    margin:auto;
+    justify-content: center;
+}
+
+#id 
+{
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+}
