@@ -1,85 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>deku</title>
+{% extends "base.html" %}
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="css/images/profile.jpg" type="image/x-icon">
-</head>
-<body>
+{% block title %}Home | deku{% endblock %}
 
-    <header>
-        <div class="container">
-            <h1>deku</h1>
+{% block content %}
 
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="pages/contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
-    <main class="container">
+<section class="hero">
+    <img id="profile" src="{{ url_for('static', filename='css/images/profile.jpg') }}" alt="Profile">
 
-        <section class="hero">
-            <img id="profile" src="css/images/profile.jpg" alt="Profile">
-            <h2>Hey ! I'm deku aka Tohid</h2>
-            <h3>First of all i am not a vibe coder then i am</h3>
-            <h3>IT Trainer | Ethical Hacker | CTF Player | Programmer</h3>
+    <h2>Hey ! I'm deku aka Tohid</h2>
+    <h3>First of all i am not a vibe coder then i am</h3>
+    <h3>IT Trainer | Ethical Hacker | CTF Player | Programmer</h3>
+
+    <p>
+        Welcome To My Blog which is a clean place where i can share knowledge,
+        tutorials, and personal experiences.
+    </p>
+</section>
+
+<section class="posts">
+
+    <article class="card">
+        <img src="{{ url_for('static', filename='css/images/loginsystem.png') }}" alt="Login System">
+
+        <div class="content">
+            <span>July 22, 2026</span>
+
+            <h3>Login System Using Python</h3>
+
             <p>
-                Welcome To My Blog which is a clean place where i can share knowledge, tutorials, and personal experiences.
+                Learn how planning before coding can dramatically improve your software projects.
             </p>
-        </section>
-        <section class="posts">
 
-            <article class="card">
-                <img src="css/images/loginsystem.png" alt="Login System">
-                <div class="content">
-                    <span>July 22, 2026</span>
-                    <h3>Login System Using Python</h3>
-                    <p>
-                        Learn how planning before coding can dramatically improve your software projects.
-                    </p>
-                    <a href="pages/posts/loginsystem.html">
-                        <button>Read More</button>
-                        </a>
-                </div>
-            </article>
+            <a href="{{ url_for('login_system_post') }}">
+                <button>Read More</button>
+            </a>
+        </div>
+    </article>
 
-            <article class="card">
-                <img src="https://picsum.photos/600/300?random=2" alt="">
-                <div class="content">
-                    <span>July 18, 2026</span>
-                    <h3>Learning Python Efficiently</h3>
-                    <p>
-                        Small daily improvements are better than occasional marathon study sessions.
-                    </p>
-                    <button>Read More</button>
-                </div>
-            </article>
+    <article class="card">
+        <img src="https://picsum.photos/600/300?random=2" alt="">
 
-            <article class="card">
-                <img src="https://picsum.photos/600/300?random=3" alt="">
-                <div class="content">
-                    <span>July 15, 2026</span>
-                    <h3>Ultimate Cybersecurity Lab Setup</h3>
-                    <p>
-                        Minimal design helps readers focus on what truly matters—the content.
-                    </p>
-                    <button>Read More</button>
-                </div>
-            </article>
+        <div class="content">
+            <span>July 18, 2026</span>
 
-        </section>
+            <h3>Learning Python Efficiently</h3>
 
-    </main>
+            <p>
+                Small daily improvements are better than occasional marathon study sessions.
+            </p>
 
-    <footer>
-        <p>| © 2026 deku blog |</p>
-    </footer>
+            <button>Read More</button>
+        </div>
+    </article>
 
-<script src="js/script.js"></script>
+    <article class="card">
+        <img src="https://picsum.photos/600/300?random=3" alt="">
 
-</body>
-</html>
+        <div class="content">
+            <span>July 15, 2026</span>
+
+            <h3>Ultimate Cybersecurity Lab Setup</h3>
+
+            <p>
+                Minimal design helps readers focus on what truly matters—the content.
+            </p>
+
+            <button>Read More</button>
+        </div>
+    </article>
+
+</section>
+
+{% endblock %}
