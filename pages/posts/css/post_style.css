@@ -1,1 +1,13 @@
-
+.container
+{
+  
+}
+.container h1
+{
+  display:flex;
+  border: 1px solid white;
+}
+.container p 
+{
+  justify-content:justify;
+}
